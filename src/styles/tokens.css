@@ -1,0 +1,36 @@
+/* ============================================================
+   DESIGN TOKENS — change the entire site's look from this file.
+   Colors, fonts, spacing, motion. Edit a value, save, done.
+   ============================================================ */
+
+:root {
+  /* ---- Color ---- */
+  --ink: #0b0b10;            /* page background */
+  --ink-2: #14141c;          /* raised surfaces (cards, nav pill) */
+  --ink-3: #1f1f2a;          /* borders / hairlines */
+  --paper: #f2efe6;          /* main text */
+  --paper-dim: #a9a6a0;      /* secondary text */
+  --accent: #d8ff3e;         /* THE color. Try #ff7ac3 or #8b7bff */
+  --accent-ink: #0b0b10;     /* text placed on top of the accent */
+
+  /* ---- Type ---- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;  /* headlines */
+  --font-body: 'Space Grotesk', system-ui, sans-serif;     /* paragraphs */
+  --font-mono: 'Space Mono', ui-monospace, monospace;      /* labels, meta */
+
+  /* Fluid type scale — min size → max size across screen widths */
+  --text-hero: clamp(3.2rem, 12vw, 10.5rem);
+  --text-h1: clamp(2.4rem, 6vw, 5rem);
+  --text-h2: clamp(1.6rem, 3.5vw, 2.6rem);
+  --text-body: clamp(1rem, 1.1vw, 1.15rem);
+  --text-small: 0.8rem;
+
+  /* ---- Layout ---- */
+  --page-pad: clamp(1.25rem, 4vw, 4rem);  /* side gutters */
+  --section-gap: clamp(5rem, 12vh, 9rem); /* vertical rhythm */
+  --radius: 20px;                          /* card corner rounding */
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --speed: 0.6s; /* base transition duration */
+}
