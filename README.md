@@ -38,6 +38,18 @@ looks unfinished.
 > ⚠️ Several projects and experience entries are marked `PLACEHOLDER` —
 > swap in your real work.
 
+### Contact form
+
+The `/contact` page has a working form with **no backend** — messages are
+relayed to the `email` set in `src/content/site.js` via
+[formsubmit.co](https://formsubmit.co) (free). **One-time setup:** the first
+time anyone submits the form, FormSubmit sends an activation email to your
+inbox — click the link in it once, and every message after that is delivered
+normally. Submit the form yourself after deploying to trigger it.
+
+> Tip: search the codebase for `✏️ EDIT` or `PLACEHOLDER` to find every spot
+> that's waiting for your real content.
+
 ## 🎨 Editing the look
 
 Open **`src/styles/tokens.css`** — every color, font, size, and spacing value

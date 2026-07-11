@@ -1,9 +1,11 @@
 import { NavLink, Link } from 'react-router-dom'
-import { site } from '../content/site'
 
+// Top navigation pill. To add a page, add a route in App.jsx and an
+// entry here. Labels are safe to edit.
 const links = [
   { to: '/work', label: 'Work' },
   { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
 ]
 
 export default function Nav() {
@@ -17,9 +19,6 @@ export default function Nav() {
           {l.label}
         </NavLink>
       ))}
-      <a href={`mailto:${site.email}`} className="nav-contact">
-        Contact
-      </a>
     </nav>
   )
 }

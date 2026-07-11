@@ -1,5 +1,5 @@
 // ============================================================
-// EXPERIENCE + EDUCATION — shown on the About page.
+// ✏️ EXPERIENCE + EDUCATION — shown on the About page.
 // Edit freely; each entry is one row in the timeline.
 // (Entries marked PLACEHOLDER are guesses — replace them.)
 // ============================================================

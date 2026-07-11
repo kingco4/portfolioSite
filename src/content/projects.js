@@ -27,6 +27,7 @@
 // ============================================================
 
 export const projects = [
+  // ✏️ PLACEHOLDER PROJECT — replace with your real work
   {
     slug: 'signal-bloom',
     title: 'Signal Bloom',
@@ -45,6 +46,7 @@ export const projects = [
     ],
     link: null,
   },
+  // ✏️ PLACEHOLDER PROJECT — replace with your real work
   {
     slug: 'memory-archive',
     title: 'Memory Archive',
@@ -63,6 +65,7 @@ export const projects = [
     ],
     link: null,
   },
+  // ✏️ PLACEHOLDER PROJECT — replace with your real work
   {
     slug: 'counterculture-console',
     title: 'Counterculture Console',
@@ -81,6 +84,7 @@ export const projects = [
     ],
     link: null,
   },
+  // ✏️ PLACEHOLDER PROJECT — replace with your real work
   {
     slug: 'teaching-creative-code',
     title: 'Teaching Creative Code',
