@@ -30,8 +30,7 @@ export const site = {
 
   // ✏️ EDIT: check these are your correct profiles; add/remove freely
   socials: [
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/cierraking/' },
-    { label: 'Instagram', url: 'https://www.instagram.com/cierra.king/' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/cierra-king/' },
     { label: 'GitHub', url: 'https://github.com/kingco4' },
   ],
 
