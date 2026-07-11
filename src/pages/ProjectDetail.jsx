@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { projects } from '../content/projects'
 import GenTile from '../components/GenTile'
+import { asset } from '../lib/asset'
 import Reveal from '../components/Reveal'
 import PageTransition from '../components/PageTransition'
 
@@ -29,7 +30,7 @@ export default function ProjectDetail() {
         <Reveal>
           <div className="project-cover" style={{ aspectRatio: '21 / 9' }}>
             {project.cover ? (
-              <img src={project.cover} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={asset(project.cover)} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             ) : (
               <GenTile seed={project.slug} accent={project.accent} />
             )}

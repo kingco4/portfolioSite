@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import GenTile from './GenTile'
 import Reveal from './Reveal'
+import { asset } from '../lib/asset'
 
 export default function ProjectCard({ project, wide = false, delay = 0 }) {
   return (
@@ -12,7 +13,7 @@ export default function ProjectCard({ project, wide = false, delay = 0 }) {
       >
         <div className="project-card-media">
           {project.cover ? (
-            <img src={project.cover} alt={project.title} loading="lazy" />
+            <img src={asset(project.cover)} alt={project.title} loading="lazy" />
           ) : (
             <GenTile seed={project.slug} accent={project.accent} />
           )}
