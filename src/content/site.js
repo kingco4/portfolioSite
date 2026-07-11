@@ -21,7 +21,7 @@ export const site = {
     'I’m a multidisciplinary artist and creative technologist working across code, projection mapping, and interactive media — merging artistic expression with technical systems.',
 
   // ✏️ EDIT: contact form messages + all "email me" links go here
-  email: 'cierra.king49@gmail.com',
+  email: 'king.cierra49@gmail.com',
 
   // ✏️ EDIT: headline + blurb on the /contact page
   contactHeading: 'Have a project in mind?',
