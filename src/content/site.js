@@ -69,6 +69,13 @@ export const skills = [
   },
   {
     group: 'Practice',
-    items: ['Immersive Installation', 'Curriculum Development', 'Teaching & Workshops', 'Prototyping'],
+    items: [
+      'Software Development',
+      'Software Architecture',
+      'Immersive Installation',
+      'Curriculum Development',
+      'Teaching & Workshops',
+      'Prototyping',
+    ],
   },
 ]
