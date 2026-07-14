@@ -818,11 +818,18 @@ body::after {
 
 .footer {
   border-top: 1px solid var(--ink-3);
-  margin: var(--section-gap) calc(-1 * var(--page-pad)) 0;
-  padding: clamp(4rem, 10vh, 7rem) var(--page-pad) 2rem;
+  margin-top: var(--section-gap);
+  padding: clamp(4rem, 10vh, 7rem) 0 2rem;
   background:
     radial-gradient(60% 80% at 50% 120%, color-mix(in srgb, var(--accent) 14%, transparent), transparent),
     var(--ink);
+}
+
+/* Mirrors .page geometry so footer text lines up with page content */
+.footer-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
 }
 
 .footer-cta {
