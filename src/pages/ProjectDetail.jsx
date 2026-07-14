@@ -18,7 +18,7 @@ export default function ProjectDetail() {
       <div className="page">
         <header className="page-header">
           <Reveal>
-            <p className="eyebrow" style={{ color: project.accent }}>
+            <p className="eyebrow project-eyebrow" style={{ '--proj-accent': project.accent }}>
               {project.tags.join(' / ')} — {project.year}
             </p>
           </Reveal>

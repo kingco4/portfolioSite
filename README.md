@@ -53,8 +53,12 @@ normally. Submit the form yourself after deploying to trigger it.
 ## 🎨 Editing the look
 
 Open **`src/styles/tokens.css`** — every color, font, size, and spacing value
-is a variable with a comment. Change `--accent` and the entire site re-tints
-(cursor, links, canvas particles, everything). Fonts are loaded in
+is a variable with a comment. The file holds **both themes**: `:root` is dark
+mode, `:root[data-theme='light']` is light mode (white + neon green/orange/pink,
+WCAG 2.1 AA contrast). The sun/moon button in the nav toggles them, and the
+visitor's choice is remembered. Note the split between `--accent` (fills and
+graphics — can be pure neon) and `--accent-text` (accent-colored text — must
+stay readable, so it's a deep green in light mode). Fonts are loaded in
 `index.html` (Google Fonts) and assigned in `tokens.css`.
 
 Section-by-section styles live in `src/styles/global.css`, organized

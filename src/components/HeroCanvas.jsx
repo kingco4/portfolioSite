@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react'
+import { useTheme } from '../theme/ThemeContext'
 
 // Generative flow-field particle system behind the hero.
-// Particles drift along a noise field in the accent color and
-// react gently to the mouse. Tune the CONFIG values to taste.
+// Particles drift along a noise field and react gently to the mouse.
+// Colors come from --particle-colors in tokens.css (one neon in dark
+// mode, a green/orange/pink trio in light mode). Tune CONFIG to taste.
 const CONFIG = {
   particleCount: 260,
   speed: 0.7,
@@ -13,14 +15,16 @@ const CONFIG = {
 
 export default function HeroCanvas() {
   const ref = useRef(null)
+  const { theme } = useTheme() // re-runs the effect when the theme flips
 
   useEffect(() => {
     const canvas = ref.current
     const ctx = canvas.getContext('2d')
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()
-    const ink = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim()
+    const styles = getComputedStyle(document.documentElement)
+    const colors = styles.getPropertyValue('--particle-colors').split(',').map((c) => c.trim())
+    const ink = styles.getPropertyValue('--ink').trim()
 
     let w, h, dpr, raf
     const mouse = { x: -9999, y: -9999 }
@@ -37,10 +41,11 @@ export default function HeroCanvas() {
     }
     resize()
 
-    const particles = Array.from({ length: CONFIG.particleCount }, () => ({
+    const particles = Array.from({ length: CONFIG.particleCount }, (_, i) => ({
       x: Math.random() * w,
       y: Math.random() * h,
       life: Math.random() * 200,
+      color: colors[i % colors.length],
     }))
 
     // Cheap pseudo-noise built from layered sines — no library needed.
@@ -91,7 +96,7 @@ export default function HeroCanvas() {
           p.life = 150 + Math.random() * 150
         }
 
-        ctx.fillStyle = accent
+        ctx.fillStyle = p.color
         ctx.globalAlpha = Math.min(p.life / 60, 0.7)
         ctx.fillRect(p.x, p.y, 1.6, 1.6)
       }
@@ -110,7 +115,7 @@ export default function HeroCanvas() {
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('resize', resize)
     }
-  }, [])
+  }, [theme])
 
   return <canvas ref={ref} className="hero-canvas" aria-hidden="true" />
 }
