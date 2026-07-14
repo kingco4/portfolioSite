@@ -61,7 +61,7 @@ export default function Home() {
             <span className="hero-scroll-hint">
               <span className="tick" /> Scroll
             </span>
-            <span>Portfolio — {new Date().getFullYear()}</span>
+            <span className="hero-stamp">Portfolio — {new Date().getFullYear()}</span>
           </div>
         </section>
 

@@ -120,6 +120,12 @@ body::after {
   mix-blend-mode: difference;
 }
 
+/* Light mode: skip the color-inverting blend so the dot reads as
+   true neon magenta on the white canvas */
+:root[data-theme='light'] .cursor-dot {
+  mix-blend-mode: normal;
+}
+
 @media (hover: none), (max-width: 768px) {
   .cursor-dot {
     display: none;
@@ -215,6 +221,19 @@ body::after {
   opacity: 0.85;
 }
 
+/* Soft translucent underlay so text stays readable over the particle
+   canvas — the theme's own background at low opacity plus a slight
+   blur. Tune the 62% for more/less presence. */
+.hero-role,
+.hero-tagline,
+.hero-meta .hero-scroll-hint,
+.hero-meta .hero-stamp {
+  width: fit-content;
+  background: color-mix(in srgb, var(--ink) 62%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 .hero-role {
   font-family: var(--font-mono);
   font-size: clamp(0.8rem, 1.4vw, 1rem);
@@ -222,6 +241,9 @@ body::after {
   letter-spacing: 0.25em;
   color: var(--accent-text);
   margin-bottom: 1.5rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 12px;
+  margin-left: -0.9rem; /* keeps the text edge aligned with the name */
 }
 
 .hero-title {
@@ -266,6 +288,9 @@ body::after {
   font-size: clamp(1.05rem, 1.6vw, 1.4rem);
   color: var(--paper-dim);
   line-height: 1.5;
+  padding: 1.1rem 1.3rem;
+  border-radius: 16px;
+  margin-left: -1.3rem; /* keeps the text edge aligned with the name */
 }
 
 .hero-meta {
@@ -281,10 +306,13 @@ body::after {
   margin-top: auto;
 }
 
-.hero-scroll-hint {
+.hero-scroll-hint,
+.hero-stamp {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
 }
 
 .hero-scroll-hint .tick {
