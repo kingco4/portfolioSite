@@ -53,9 +53,10 @@
 }
 
 /* ---- LIGHT MODE ----
-   White canvas, neon accents. All text colors pass WCAG 2.1 AA:
-   #16161c on white = 18:1 · #565660 = 7.3:1 · #367000 = 6:1.
-   Pure neons stay in graphics and behind dark text only. */
+   White canvas, neon magenta lead with green/orange support.
+   All text colors pass WCAG 2.1 AA: #16161c on white = 18:1 ·
+   #565660 = 7.3:1 · #d6187f = 4.9:1 · dark-on-#ff2d9e = 5.7:1.
+   Pure neons stay in fills/graphics and behind dark text only. */
 :root[data-theme='light'] {
   --ink: #ffffff;
   --ink-2: #f6f6f1;
@@ -63,12 +64,12 @@
   --paper: #16161c;
   --paper-dim: #565660;
 
-  --accent: #d8ff3e;         /* neon green survives as fills/graphics */
-  --accent-text: #367000;    /* deep neon-green for readable accent text */
+  --accent: #ff2d9e;         /* neon magenta: buttons, fills, graphics */
+  --accent-text: #d6187f;    /* vivid magenta for readable accent text */
   --accent-ink: #0b0b10;
 
-  /* neon trio in the hero canvas: green, orange, pink */
-  --particle-colors: #00b34d, #ff6b1a, #ff2d9e;
+  /* neon trio in the hero canvas: magenta leads, green + orange support */
+  --particle-colors: #ff2d9e, #00b34d, #ff6b1a;
 
   --grain-opacity: 0.035;
 }
