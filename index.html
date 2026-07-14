@@ -16,15 +16,12 @@
   </head>
   <body>
     <script>
-      // Apply the saved (or system-preferred) theme before first paint
-      // so there's no white/dark flash on load.
+      // Apply the saved theme before first paint so there's no flash.
+      // Exactly two modes: 'light' or 'dark' (dark is the default).
       ;(function () {
         var t
         try { t = localStorage.getItem('theme') } catch (e) {}
-        if (t !== 'light' && t !== 'dark') {
-          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
-        }
-        document.documentElement.dataset.theme = t
+        document.documentElement.dataset.theme = t === 'light' ? 'light' : 'dark'
       })()
     </script>
     <div id="root"></div>

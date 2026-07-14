@@ -249,6 +249,17 @@ body::after {
   -webkit-text-stroke: 2px var(--paper);
 }
 
+/* Light mode: the name renders in the palette's deep neon green
+   (6:1 on white) instead of plain dark text */
+:root[data-theme='light'] .hero-title {
+  color: var(--accent-text);
+}
+
+:root[data-theme='light'] .hero-title .outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--accent-text);
+}
+
 .hero-tagline {
   max-width: 34ch;
   margin-top: 2.5rem;
