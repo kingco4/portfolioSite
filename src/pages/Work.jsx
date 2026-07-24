@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { projects } from '../content/projects'
+import { projects, workCategories } from '../content/projects'
 import ProjectCard from '../components/ProjectCard'
 import Reveal from '../components/Reveal'
 import PageTransition from '../components/PageTransition'
 
 export default function Work() {
-  const tags = ['All', ...new Set(projects.flatMap((p) => p.tags))]
+  // Headings come from workCategories in src/content/projects.js
+  const tags = ['All', ...workCategories]
   const [active, setActive] = useState('All')
   const shown = active === 'All' ? projects : projects.filter((p) => p.tags.includes(active))
 
@@ -39,11 +40,17 @@ export default function Work() {
         </header>
 
         <section className="section">
-          <div className="work-grid">
-            {shown.map((p, i) => (
-              <ProjectCard key={p.slug} project={p} delay={(i % 2) * 0.12} />
-            ))}
-          </div>
+          {shown.length > 0 ? (
+            <div className="work-grid">
+              {shown.map((p, i) => (
+                <ProjectCard key={p.slug} project={p} delay={(i % 2) * 0.12} />
+              ))}
+            </div>
+          ) : (
+            <Reveal>
+              <p className="empty-note">Nothing under {active} yet — new work coming soon ✳</p>
+            </Reveal>
+          )}
         </section>
       </div>
     </PageTransition>

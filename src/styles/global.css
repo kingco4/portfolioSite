@@ -504,6 +504,19 @@ body::after {
   margin: 0 0.4rem 0.4rem 0;
 }
 
+/* Shown when a work category has no projects yet */
+.empty-note {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--paper-dim);
+  border: 1px dashed var(--ink-3);
+  border-radius: var(--radius);
+  padding: clamp(2.5rem, 8vh, 5rem) 2rem;
+  text-align: center;
+}
+
 /* ---------- Section headers / big type ---------- */
 
 .h1 {

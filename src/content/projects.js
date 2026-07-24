@@ -26,6 +26,18 @@
 // shape of your practice — swap in your real work.
 // ============================================================
 
+// ✏️ EDIT: the filter headings on the Work page, in display order.
+// A project appears under a heading when the heading is in its tags.
+export const workCategories = [
+  'Projection Mapping',
+  'Interactive Media',
+  'Animations',
+  'Graphic Design',
+  'Web Design',
+  'UX/UI',
+  'Education',
+]
+
 export const projects = [
   // ✏️ PLACEHOLDER PROJECT — replace with your real work
   {
@@ -51,7 +63,7 @@ export const projects = [
     slug: 'memory-archive',
     title: 'Memory Archive',
     year: '2024',
-    tags: ['Interactive Media', 'Web'],
+    tags: ['Interactive Media', 'Web Design'],
     summary:
       'An interactive web archive exploring cultural memory through participatory storytelling.',
     role: 'Design and full-stack development',
@@ -70,7 +82,7 @@ export const projects = [
     slug: 'counterculture-console',
     title: 'Counterculture Console',
     year: '2024',
-    tags: ['Creative Coding', 'Generative'],
+    tags: ['Animations', 'Graphic Design'],
     summary:
       'A generative art system riffing on postmodern collage — every render is a one-of-one composition.',
     role: 'Creative coding and system design',
@@ -89,7 +101,7 @@ export const projects = [
     slug: 'teaching-creative-code',
     title: 'Teaching Creative Code',
     year: '2023 — ongoing',
-    tags: ['Education', 'Curriculum'],
+    tags: ['Education'],
     summary:
       'Curriculum and workshops helping new technologists use code as a tool for cultural expression.',
     role: 'Curriculum development and instruction',
