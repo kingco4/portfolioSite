@@ -3,6 +3,7 @@ import { experience, education } from '../content/experience'
 import Reveal from '../components/Reveal'
 import Marquee from '../components/Marquee'
 import PageTransition from '../components/PageTransition'
+import { asset } from '../lib/asset'
 
 export default function About() {
   return (
@@ -24,6 +25,13 @@ export default function About() {
               ))}
             </Reveal>
             <div>
+              {site.portrait && (
+                <Reveal>
+                  <div className="about-portrait">
+                    <img src={asset(site.portrait)} alt={site.portraitAlt} />
+                  </div>
+                </Reveal>
+              )}
               {skills.map((block, i) => (
                 <Reveal key={block.group} delay={i * 0.1}>
                   <div className="skills-block">

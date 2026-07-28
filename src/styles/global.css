@@ -570,6 +570,18 @@ body::after {
   color: var(--accent-text);
 }
 
+.about-portrait {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--ink-3);
+  margin-bottom: 1.25rem;
+}
+
+.about-portrait img {
+  width: 100%;
+  display: block;
+}
+
 .skills-block {
   border: 1px solid var(--ink-3);
   border-radius: var(--radius);

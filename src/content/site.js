@@ -28,6 +28,12 @@ export const site = {
   contactBlurb:
     'Whether it’s an installation, a build, a workshop, or just an idea worth exploring — my inbox is open.',
 
+  // ✏️ EDIT: your photo on the About page. Put the file in
+  // /public/about/ and set e.g. portrait: '/about/portrait.jpg'.
+  // Set to null to hide the photo block entirely.
+  portrait: null,
+  portraitAlt: 'Portrait of Cierra King',
+
   // ✏️ EDIT: check these are your correct profiles; add/remove freely
   socials: [
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/cierra-king/' },
