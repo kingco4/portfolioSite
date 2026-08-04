@@ -23,7 +23,9 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <span>{site.location}</span>
+          <span>
+            {site.location} · v{__BUILD_ID__}
+          </span>
         </div>
       </div>
     </footer>
