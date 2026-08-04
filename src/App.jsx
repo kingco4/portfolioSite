@@ -1,5 +1,4 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
@@ -32,16 +31,17 @@ export default function App() {
       <Cursor />
       <ScrollToTop />
       <Nav />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/work/:slug" element={<ProjectDetail />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </AnimatePresence>
+      {/* Pages animate themselves in on mount (see PageTransition).
+          There is deliberately no exit animation: exit-blocking
+          transitions can strand navigation in some browsers. */}
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/work/:slug" element={<ProjectDetail />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
       <Footer />
     </>
   )
