@@ -14,12 +14,12 @@ export default function Work() {
     <PageTransition>
       <div className="page">
         <header className="page-header">
-          <Reveal>
+          <Reveal now>
             <h1 className="h1">
               Work<span>.</span>
             </h1>
           </Reveal>
-          <Reveal delay={0.15}>
+          <Reveal now delay={0.15}>
             <div style={{ marginTop: '2rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {tags.map((t) => (
                 <button

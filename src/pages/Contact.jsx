@@ -41,7 +41,7 @@ export default function Contact() {
     <PageTransition>
       <div className="page">
         <header className="page-header">
-          <Reveal>
+          <Reveal now>
             <h1 className="h1">
               Contact<span>.</span>
             </h1>
@@ -49,7 +49,7 @@ export default function Contact() {
         </header>
 
         <section className="section contact-grid">
-          <Reveal>
+          <Reveal now>
             <h2 className="h2" style={{ marginBottom: '1.5rem' }}>
               {site.contactHeading}
             </h2>
@@ -68,7 +68,7 @@ export default function Contact() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.15}>
+          <Reveal now delay={0.15}>
             {status === 'sent' ? (
               <div className="form-success">
                 <p className="h2">Message sent ✳</p>

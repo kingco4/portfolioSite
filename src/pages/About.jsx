@@ -10,7 +10,7 @@ export default function About() {
     <PageTransition>
       <div className="page">
         <header className="page-header">
-          <Reveal>
+          <Reveal now>
             <h1 className="h1">
               About<span>.</span>
             </h1>
@@ -19,21 +19,21 @@ export default function About() {
 
         <section className="section">
           <div className="about-grid">
-            <Reveal className="about-bio">
+            <Reveal now className="about-bio">
               {bio.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </Reveal>
             <div>
               {site.portrait && (
-                <Reveal>
+                <Reveal now>
                   <div className="about-portrait">
                     <img src={asset(site.portrait)} alt={site.portraitAlt} />
                   </div>
                 </Reveal>
               )}
               {skills.map((block, i) => (
-                <Reveal key={block.group} delay={i * 0.1}>
+                <Reveal now key={block.group} delay={i * 0.1}>
                   <div className="skills-block">
                     <h3>{block.group}</h3>
                     <div>

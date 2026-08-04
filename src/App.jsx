@@ -10,9 +10,16 @@ import ProjectDetail from './pages/ProjectDetail'
 import About from './pages/About'
 import Contact from './pages/Contact'
 
-// Jump back to the top whenever the route changes
+// Jump back to the top whenever the route changes. Scroll restoration
+// is set to manual so the browser doesn't re-apply an old scroll
+// position on back/forward and hide freshly mounted content.
 function ScrollToTop() {
   const { pathname } = useLocation()
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+  }, [])
   useEffect(() => window.scrollTo(0, 0), [pathname])
   return null
 }

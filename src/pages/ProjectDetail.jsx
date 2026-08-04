@@ -17,17 +17,17 @@ export default function ProjectDetail() {
     <PageTransition>
       <div className="page">
         <header className="page-header">
-          <Reveal>
+          <Reveal now>
             <p className="eyebrow project-eyebrow" style={{ '--proj-accent': project.accent }}>
               {project.tags.join(' / ')} — {project.year}
             </p>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal now delay={0.1}>
             <h1 className="h1">{project.title}</h1>
           </Reveal>
         </header>
 
-        <Reveal>
+        <Reveal now>
           <div className="project-cover" style={{ aspectRatio: '21 / 9' }}>
             {project.cover ? (
               <img src={asset(project.cover)} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -37,7 +37,7 @@ export default function ProjectDetail() {
           </div>
         </Reveal>
 
-        <Reveal>
+        <Reveal now>
           <div className="project-hero-meta">
             <div>
               <h4>Role</h4>
@@ -54,7 +54,7 @@ export default function ProjectDetail() {
           </div>
         </Reveal>
 
-        <Reveal>
+        <Reveal now>
           <div className="project-body">
             {project.body.map((para, i) => (
               <p key={i}>{para}</p>
